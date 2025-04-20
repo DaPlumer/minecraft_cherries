@@ -1,7 +1,6 @@
 package daplumer.minecraft_cherries;
 
 import net.fabricmc.api.ModInitializer;
-
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
 import net.minecraft.block.Blocks;
@@ -15,15 +14,9 @@ import net.minecraft.loot.LootTable;
 import net.minecraft.loot.condition.SurvivesExplosionLootCondition;
 import net.minecraft.loot.condition.TableBonusLootCondition;
 import net.minecraft.loot.entry.ItemEntry;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.util.Optional;
 
 public class CherriesForMinecraft implements ModInitializer {
 	public static final String MOD_ID = "minecraft_cherries";
@@ -33,15 +26,15 @@ public class CherriesForMinecraft implements ModInitializer {
 	// That way, it's clear which mod wrote info, warnings, and errors.
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 	public static final RegistryKey<LootTable> CHERRY_LEAVES_LOOT_TABLE_ID = Blocks.CHERRY_LEAVES.getLootTableKey().get();
-	CherriesForMinecraftRegistries
-public static final Item CHERRY = Registry.register(Registries.ITEM,Identifier.of(MOD_ID, "cherry"), new Item(new Item.Settings().food(FoodComponents.APPLE).registryKey(RegistryKey.of(RegistryKeys.ITEM,Identifier.of(MOD_ID,"cherry")))));
+	public static final Item CHERRY = CherriesForMinecraftRegistries.ITEMS.register("cherry",new Item.Settings().food(FoodComponents.APPLE));
+
 	@Override
 	public void onInitialize() {
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
-		LOGGER.info("Hello Fabric world!");
+		CherriesForMinecraftRegistries.Initialize();
+
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(entries -> entries.addAfter(Items.APPLE,CHERRY));
+
+		//register loot tables for fruit
 		LootTableEvents.MODIFY.register(((key, tableBuilder, source, registries) -> {
 			if (source.isBuiltin() && CHERRY_LEAVES_LOOT_TABLE_ID.equals(key)){
 				LootPool.Builder poolBuilder = LootPool.builder()
