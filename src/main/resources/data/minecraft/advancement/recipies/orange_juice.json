@@ -1,0 +1,25 @@
+{
+  "criteria": {
+    "Get Orange": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft_cherries:orange"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "Get Orange"
+    ]
+  ],
+  "rewards": {
+    "loot": [],
+    "recipes": [
+      "minecraft_cherries:orange_juice"
+    ]
+  }
+}

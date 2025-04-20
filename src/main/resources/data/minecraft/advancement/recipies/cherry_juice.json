@@ -1,0 +1,25 @@
+{
+  "criteria": {
+    "Get Cherry": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft_cherries:cherry"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "Get Cherry"
+    ]
+  ],
+  "rewards": {
+    "loot": [],
+    "recipes": [
+      "minecraft_cherries:cherry_juice"
+    ]
+  }
+}

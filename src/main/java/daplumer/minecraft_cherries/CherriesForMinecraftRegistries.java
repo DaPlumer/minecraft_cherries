@@ -9,8 +9,6 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
-import net.minecraft.loot.LootTable;
-import net.minecraft.registry.RegistryKey;
 import net.minecraft.stat.Stat;
 import net.minecraft.stat.StatFormatter;
 import net.minecraft.util.Identifier;
@@ -67,10 +65,6 @@ public record CherriesForMinecraftRegistries() {
      */
     static ModDataRegisterer<ItemGroup, ItemGroup.Builder> ITEM_GROUPS = (ITEM_GROUP_REGISTERER_CONSTRUCTOR.apply(getNamespace()));
 
-    /**
-     * WIP DO NOT USE!
-     */
-    static ModDataRegisterer<RegistryKey<LootTable>, RegistryKey<LootTable>> LOOT_TABLES = (LOOT_TABLE_REGISTERER_CONSTRUCTOR.apply(getNamespace()));
 
     /**
      * Mod registerer for statistic registration
@@ -95,7 +89,7 @@ public record CherriesForMinecraftRegistries() {
      */
     static ModDataRegisterer<EntityType, EntityType.Builder> ENTITY_TYPES = (ENTITY_TYPE_REGISTERER_CONSTRUCTOR.apply(getNamespace()));
     static @NotNull String getNamespace(){
-        return "more_bugs";
+        return "minecraft_cherries";
     }
 
     /**

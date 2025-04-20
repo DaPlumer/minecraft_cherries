@@ -6,7 +6,6 @@ import net.minecraft.block.Block;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
-import net.minecraft.loot.LootTable;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -31,7 +30,6 @@ public record ModRegistries() {
     public static final Function<String, ModDataRegisterer<Block, Block.Settings>>                         BLOCK_REGISTERER_CONSTRUCTOR       = generalRegisterer(Registries.BLOCK,      AbstractBlock.Settings::registryKey, Block::new, AbstractBlock.Settings::create);
     public static final Function<String, ModDataRegisterer<ItemGroup, ItemGroup.Builder>>                  ITEM_GROUP_REGISTERER_CONSTRUCTOR  = generalRegisterer(Registries.ITEM_GROUP, (builder, itemGroupRegistryKey) -> builder, ItemGroup.Builder::build, FabricItemGroup::builder);
     public static final Function<String, ModDataRegisterer<EntityType, EntityType.Builder>>                ENTITY_TYPE_REGISTERER_CONSTRUCTOR = ModEntityTypeRegisterer::new;
-    public static final Function<String, ModDataRegisterer<RegistryKey<LootTable>,RegistryKey<LootTable>>> LOOT_TABLE_REGISTERER_CONSTRUCTOR  = ModLootTableRegisterer::new;
     public static final Function<String, ModDataRegisterer<Stat<Identifier>, StatFormatter>>               STAT_REGISTERER_CONSTRUCTOR        = ModStatTypeRegisterer::new;
 
     private static <T,S> @NotNull Function<String, ModDataRegisterer<T,S>> generalRegisterer(Registry registry, BiFunction<S, RegistryKey<T>, S> registryKeySettingsFactory, Function<S, T> defaultInstanceFactory, Supplier defaultSettingsFactory){
