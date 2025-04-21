@@ -17,7 +17,10 @@
 	"entrypoints": {
 		"main": [
 			"daplumer.minecraft_cherries.CherriesForMinecraft"
-		]
+		],
+        "client": [
+          "daplumer.minecraft_cherries.CherriesForMinecraftClient"
+        ]
 	},
 
 	"mixins": [
