@@ -11,5 +11,7 @@ public class CherriesForMinecraftClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         BlockRenderLayerMap.INSTANCE.putBlock(CherriesForMinecraft.NEST_BLOCK, RenderLayer.getCutout());
+
+        BlockRenderLayerMap.INSTANCE.putBlock(CherriesForMinecraft.ORANGE_BLOCK, RenderLayer.getCutout());
     }
 }

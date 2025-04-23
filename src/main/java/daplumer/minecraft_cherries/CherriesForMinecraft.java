@@ -1,6 +1,7 @@
 package daplumer.minecraft_cherries;
 
 import daplumer.minecraft_cherries.block.Nest;
+import daplumer.minecraft_cherries.block.Orange;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
@@ -36,7 +37,11 @@ public class CherriesForMinecraft implements ModInitializer {
 	public static Logger LOGGER = Logger.getLogger(MOD_ID);
 	public static final Item CHERRY = ITEMS.register("cherry",new Item.Settings().food(FoodComponents.APPLE));
 
-	public static final Item ORANGE = ITEMS.register("orange",new Item.Settings().food(FoodComponents.APPLE));
+	public static final Block ORANGE_BLOCK = BLOCKS.register("orange",AbstractBlock.Settings.create().breakInstantly().pistonBehavior(PistonBehavior.DESTROY).nonOpaque().sounds(BlockSoundGroup.FROGSPAWN), Orange::new);
+
+	public static final Item ORANGE = ITEMS.register("orange",new Item.Settings().food(FoodComponents.APPLE),BLOCK_ITEM(ORANGE_BLOCK));
+
+	public static final Item ORANGE_SLICE = ITEMS.register("orange_slice",new Item.Settings().food(FoodComponents.MELON_SLICE));
 	public static final Block NEST_BLOCK = BLOCKS.register("nest",AbstractBlock.Settings.create().breakInstantly().burnable().pistonBehavior(PistonBehavior.DESTROY).nonOpaque().sounds(BlockSoundGroup.GRASS), Nest::new);
 	public static final BlockItem NEST_ITEM = (BlockItem) ITEMS.register("nest",new Item.Settings(),BLOCK_ITEM(NEST_BLOCK));
 
@@ -55,7 +60,6 @@ public class CherriesForMinecraft implements ModInitializer {
     @Override
 	public void onInitialize() {
 		droppedFruits.put(Blocks.CHERRY_LEAVES.getLootTableKey().get(),CHERRY);
-		droppedFruits.put(Blocks.JUNGLE_LEAVES.getLootTableKey().get(),ORANGE);
 		CherriesForMinecraftRegistries.Initialize();
 
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(entries -> {
@@ -65,6 +69,7 @@ public class CherriesForMinecraft implements ModInitializer {
 			entries.addAfter(CHERRY,ORANGE);
 
 			entries.addAfter(CHERRY_JUICE,ORANGE_JUICE);
+			entries.addAfter(Items.MELON_SLICE,ORANGE_SLICE);
 		});
 
 

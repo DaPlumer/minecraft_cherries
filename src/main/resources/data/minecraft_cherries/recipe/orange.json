@@ -2,11 +2,12 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    "minecraft:glass_bottle",
+    "minecraft_cherries:orange_slice",
+    "minecraft_cherries:orange_slice",
     "minecraft_cherries:orange_slice",
     "minecraft_cherries:orange_slice"
   ],
   "result": {
-    "id": "minecraft_cherries:orange_juice"
+    "id": "minecraft_cherries:orange"
   }
 }
