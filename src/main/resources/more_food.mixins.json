@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "daplumer.more_food.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "client": [
+    "TransRights"
+  ],
+  "mixins": [
+    "ChickenBreedingMixin",
+    "JungleLeavesMixin"
+  ]
+}

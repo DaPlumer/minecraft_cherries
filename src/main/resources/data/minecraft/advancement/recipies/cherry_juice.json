@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "minecraft_cherries:cherry"
+            "items": "more_food:cherry"
           }
         ]
       }
@@ -19,7 +19,7 @@
   "rewards": {
     "loot": [],
     "recipes": [
-      "minecraft_cherries:cherry_juice"
+      "more_food:cherry_juice"
     ]
   }
 }

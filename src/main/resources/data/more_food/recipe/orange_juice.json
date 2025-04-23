@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:glass_bottle",
+    "more_food:orange_slice",
+    "more_food:orange_slice"
+  ],
+  "result": {
+    "id": "more_food:orange_juice"
+  }
+}

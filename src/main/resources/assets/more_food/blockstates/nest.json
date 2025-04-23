@@ -1,0 +1,19 @@
+{
+  "variants":{
+    "egg=0": {
+      "model": "more_food:block/empty_nest"
+    },
+    "egg=1": {
+      "model": "more_food:block/nest_with_white_egg"
+    },
+    "egg=2": {
+      "model": "more_food:block/nest_with_brown_egg"
+    },
+    "egg=3": {
+      "model": "more_food:block/nest_with_blue_egg"
+    },
+    "egg=4": {
+      "model": "more_food:block/nest_with_parrot_egg"
+    }
+  }
+}

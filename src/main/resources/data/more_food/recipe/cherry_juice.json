@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "   ",
+    " C ",
+    " B "
+  ],
+  "key": {
+    "B": "minecraft:glass_bottle",
+    "C": "more_food:cherry"
+  },
+  "result": {
+    "id": "more_food:cherry_juice"
+  }
+}

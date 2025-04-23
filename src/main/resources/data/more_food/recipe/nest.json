@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "WEW",
+    "SWS"
+  ],
+  "key": {
+    "E": "#minecraft:chicken_food",
+    "S": "minecraft:stick",
+    "W": "minecraft:wheat"
+  },
+  "result": {
+    "id": "more_food:nest"
+  }
+}

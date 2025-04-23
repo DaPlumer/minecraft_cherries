@@ -1,6 +1,6 @@
 {
 	"schemaVersion": 1,
-	"id": "minecraft_cherries",
+	"id": "more_food",
 	"version": "${version}",
 	"name": "Cherries for Minecraft!",
 	"description": "This mod adds cherries to minecraft that drop from cherry blossom trees",
@@ -12,19 +12,19 @@
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
 	"license": "CC0-1.0",
-	"icon": "assets/minecraft_cherries/textures/item/cherries.png",
+	"icon": "assets/more_food/textures/item/cherries.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"daplumer.minecraft_cherries.CherriesForMinecraft"
+			"daplumer.more_food.MoreFood"
 		],
         "client": [
-          "daplumer.minecraft_cherries.CherriesForMinecraftClient"
+			"daplumer.more_food.MoreFoodClient"
         ]
 	},
 
 	"mixins": [
-		"minecraft_cherries.mixins.json"
+		"more_food.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.16.13",

@@ -1,11 +1,11 @@
 {
   "criteria": {
-    "Get Orange": {
+    "Get Cherry": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "items": "more_food:orange_slice"
+            "items": "#minecraft:eggs"
           }
         ]
       }
@@ -13,14 +13,13 @@
   },
   "requirements": [
     [
-      "Get Orange"
+      "Get Cherry"
     ]
   ],
   "rewards": {
     "loot": [],
     "recipes": [
-      "more_food:orange_juice",
-      "more_food:orange"
+      "more_food:nest"
     ]
   }
 }

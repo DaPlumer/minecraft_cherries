@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": {
+        "type": "minecraft:binomial",
+        "n": 4,
+        "p": 0.9
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "more_food:orange_slice"
+        }
+      ]
+    }
+  ],
+  "random_sequence": "trans_rights"
+}
